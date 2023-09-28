@@ -1,0 +1,30 @@
+{
+  "name": "Frameworks",
+  "version": "1.0.0",
+  "description": "Se debe realizar tres implementaciones sobre Django (Framework back-end) y React (front-end) para la materia Frameworks e Interoperabilidad",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FI-GrupoMartinez/Frameworks.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FI-GrupoMartinez/Frameworks/issues"
+  },
+  "homepage": "https://github.com/FI-GrupoMartinez/Frameworks#readme",
+  "dependencies": {
+    "@babel/core": "^7.23.0",
+    "@babel/preset-env": "^7.22.20",
+    "@babel/preset-react": "^7.22.15",
+    "babel-loader": "^9.1.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  }
+}

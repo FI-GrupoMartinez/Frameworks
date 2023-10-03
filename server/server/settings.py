@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'drf_yasg',
     'usuarios',
+    'peliculas',
 
 ]
 

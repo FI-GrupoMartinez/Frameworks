@@ -1,2 +1,2 @@
 # Ignorar carpetas pycache de los módulos de Django
-**/pycache/
+**/__pycache__/

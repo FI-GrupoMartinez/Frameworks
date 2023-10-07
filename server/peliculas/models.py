@@ -5,16 +5,12 @@ class Pelicula(models.Model):
     nombre = models.CharField(max_length=100)
     duracion = models.IntegerField()
     poster = models.ImageField(upload_to='poster_peliculas')
-    video_trailer = models.CharField(max_length=100)
     clasificacion = models.CharField(max_length=100)
-    actores = models.CharField(max_length=250)
-    director = models.CharField(max_length=100)
     genero = models.CharField(max_length=100)
-    origen = models.CharField(max_length=100)
-    distribuidor = models.CharField(max_length=100)
-    descripcion_corta = models.CharField(max_length=250)
-    descripcion_larga = models.CharField(max_length=500)
-    tipo = models.CharField(max_length=100)
+    descripcion = models.CharField(max_length=500)
 
     def __str__(self):
-        return self.nombre
+        duracion_minutos = self.duracion
+        horas, minutos = divmod(duracion_minutos, 60)
+        duracion_str = f"{horas}:{minutos:02d}"
+        return f"{self.nombre} - Género: {self.genero} | Duración: {duracion_str}hs"

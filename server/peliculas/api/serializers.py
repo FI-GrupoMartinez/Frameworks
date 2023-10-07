@@ -10,14 +10,7 @@ class PeliculaSerializer(ModelSerializer):
             'nombre',
             'duracion',
             'poster',
-            'video_trailer',
             'clasificacion',
-            'actores',
-            'director',
             'genero',
-            'origen',
-            'distribuidor',
-            'descripcion_corta',
-            'descripcion_larga',
-            'tipo'
+            'descripcion',
         ]

@@ -9,14 +9,7 @@ class PeliculaFilter(filters.FilterSet):
         fields = [
             'nombre',
             'duracion',
-            'video_trailer',
             'clasificacion',
-            'actores',
-            'director',
             'genero',
-            'origen',
-            'distribuidor',
-            'descripcion_corta',
-            'descripcion_larga',
-            'tipo'
+            'descripcion',
         ]

@@ -1,0 +1,10 @@
+.top-menu-admin {
+  &__logo {
+    width: 225px;
+    background-color: #000000 !important;
+
+    > p {
+      color: white;
+    }
+  }
+}

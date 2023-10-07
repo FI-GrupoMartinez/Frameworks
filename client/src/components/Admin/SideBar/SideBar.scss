@@ -1,0 +1,20 @@
+.side-menu-admin {
+  .ui.menu {
+    width: 225px !important;
+    padding-top: 3.3em;
+    z-index: 99 !important;
+
+    i.icon {
+      font-size: 20px;
+      float: inital !important;
+      margin-right: 10px !important;
+    }
+  }
+}
+
+.content {
+  position: relative;
+  right: 0;
+  padding: 25px;
+  width: calc(100% - 225px);
+}

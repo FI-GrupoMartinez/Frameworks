@@ -1,5 +1,5 @@
 import { AdminLayout } from "../layouts";
-import { HomeAdmin, UsersAdmin, FuncionesAdmin, PeliculasAdmin, EstablecimientosAdmin, SalasAdmin } from "../pages/Admin";
+import { HomeAdmin, UsersAdmin, PeliculasAdmin} from "../pages/Admin";
 
 const routesAdmin = [
     {

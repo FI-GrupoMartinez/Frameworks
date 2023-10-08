@@ -20,7 +20,7 @@ export async function addPeliculaApi(data, token) {
         formData.append('duracion', data.duracion);
         formData.append('genero', data.genero);
         formData.append('clasificacion', data.clasificacion);
-        formData.append('descripcion', data.descripcion);
+        formData.append('descripcion', data.descripcion ? data.descripcion : "");
 
         const url = `${BASE_API}/api/peliculas/`;
         const params = {
@@ -46,8 +46,8 @@ export async function updatePeliculaApi(id, data, token) {
         formData.append('duracion', data.duracion);
         formData.append('genero', data.genero);
         formData.append('clasificacion', data.clasificacion);
+        formData.append('descripcion', data.descripcion ? data.descripcion : "");
 
-        if (data.descripcion) formData.append('descripcion', data.descripcion);
         if (data.poster) formData.append('poster', data.poster);
 
         const url = `${BASE_API}/api/peliculas/${id}/`;

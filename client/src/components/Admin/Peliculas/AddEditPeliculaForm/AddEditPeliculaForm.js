@@ -1,9 +1,10 @@
 import React, { useCallback, useState } from 'react'
-import { Form, Button, Select, TextArea, Image } from "semantic-ui-react"
+import { Form, Button, TextArea, Image, Dropdown } from "semantic-ui-react"
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useDropzone } from "react-dropzone"
 import { usePelicula } from "../../../../hooks"
+import "./AddEditPeliculaForm.scss";
 
 export function AddEditPeliculaForm(props) {
 
@@ -24,6 +25,13 @@ export function AddEditPeliculaForm(props) {
         onDrop // La funcion se llama igual a la propiedad, por eso solo se pone onDrop y no onDrop: onDrop()
     });
 
+    const clasificationOptions = [
+        { key: '1', value: 'ATP', text: 'ATP' },
+        { key: '2', value: 'PG-13', text: 'PG-13' },
+        { key: '3', value: 'PG-16', text: 'PG-16' },
+        { key: '4', value: 'PG-18', text: 'PG-18' },
+    ];
+
     const formik = useFormik({
         initialValues: initialValues(pelicula),
         validationSchema: Yup.object(pelicula ? updateSchema() : newSchema()),
@@ -38,14 +46,22 @@ export function AddEditPeliculaForm(props) {
                 console.error(error)
             }
         }
-    })
+    });
 
     return (
         <Form className='add-edit-pelicula-form' onSubmit={formik.handleSubmit}>
             <Form.Input name="nombre" value={formik.values.nombre} onChange={formik.handleChange} error={formik.errors.nombre} placeholder="Nombre de la pelicula"></Form.Input>
             <Form.Input name="duracion" value={formik.values.duracion} onChange={formik.handleChange} error={formik.errors.duracion} placeholder="Duracion"></Form.Input>
             <Form.Input name="genero" value={formik.values.genero} onChange={formik.handleChange} error={formik.errors.genero} placeholder="Género"></Form.Input>
-            <Form.Input name="clasificacion" placeholder='Clasificación' value={formik.values.clasificacion} onChange={formik.handleChange} error={formik.errors.clasificacion} />
+
+            <Dropdown placeholder='Clasificación'
+                fluid selection search
+                options={clasificationOptions}
+                value={formik.values.clasificacion}
+                onChange={(_, data) => formik.setFieldValue('clasificacion', data.value)}
+                error={formik.errors.clasificacion}
+            />
+
             <TextArea rows={3} placeholder='Descripción' name='descripcion' value={formik.values.descripcion} onChange={formik.handleChange} error={formik.errors.descripcion} />
 
             <Button type='button' fluid {...getRootProps()} color={formik.errors.poster && "red"}>
@@ -75,10 +91,10 @@ function initialValues(data) {
 function newSchema() {
     return {
         nombre: Yup.string().required(true),
-        duracion: Yup.string().required(true),
+        duracion: Yup.string().matches(/^\d+$/, "La duración debe ser un número entero.").required(true),
         genero: Yup.string().required(true),
         clasificacion: Yup.string().required(true),
-        descripcion: Yup.string().required(true),
+        descripcion: Yup.string(),
         poster: Yup.string().required(true),
     }
 }
@@ -86,10 +102,10 @@ function newSchema() {
 function updateSchema() {
     return {
         nombre: Yup.string().required(true),
-        duracion: Yup.string().required(true),
+        duracion: Yup.string().matches(/^\d+$/, "La duración debe ser un número entero.").required(true),
         genero: Yup.string(),
         clasificacion: Yup.string().required(true),
-        descripcion: Yup.string().required(true),
+        descripcion: Yup.string(),
         poster: Yup.string(),
     }
 }

@@ -28,6 +28,7 @@ export function LoginForm() {
     return (
         <Form className='login-form-admin' onSubmit={formik.handleSubmit} >
             <Form.Input
+                autoComplete="off"
                 name="email"
                 placeholder="Correo electronico"
                 value={formik.values.email}
@@ -35,6 +36,7 @@ export function LoginForm() {
                 error={formik.errors.email}
             />
             <Form.Input
+                autoComplete="off"
                 name="password"
                 type="password"
                 placeholder="Contraseña"

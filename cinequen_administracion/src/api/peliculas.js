@@ -26,8 +26,12 @@ export async function addPeliculaApi(data, token) {
         formData.append('distribuidor', data.distribuidor);
         formData.append('tipo', data.tipo);
         formData.append('clasificacion', data.clasificacion);
+<<<<<<< HEAD:cinequen_administracion/src/api/peliculas.js
         formData.append('descripcion_corta', data.descripcion_corta);
         formData.append('descripcion_larga', data.descripcion_larga);
+=======
+        formData.append('descripcion', data.descripcion ? data.descripcion : "");
+>>>>>>> 1c079fd6688cd50ab64680bf1a1ca9f4ffd731fb:client/src/api/peliculas.js
 
         const url = `${BASE_API}/api/peliculas/`;
         const params = {
@@ -54,6 +58,7 @@ export async function updatePeliculaApi(id, data, token) {
         formData.append('video_trailer', data.video_trailer);
         formData.append('tipo', data.tipo);
         formData.append('clasificacion', data.clasificacion);
+<<<<<<< HEAD:cinequen_administracion/src/api/peliculas.js
         formData.append('descripcion_corta', data.descripcion_corta);
 
         if (data.actores) formData.append('actores', data.actores);
@@ -62,6 +67,10 @@ export async function updatePeliculaApi(id, data, token) {
         if (data.origen) formData.append('origen', data.origen);
         if (data.distribuidor) formData.append('distribuidor', data.distribuidor);
         if (data.descripcion_larga) formData.append('descripcion_larga', data.descripcion_larga);
+=======
+        formData.append('descripcion', data.descripcion ? data.descripcion : "");
+
+>>>>>>> 1c079fd6688cd50ab64680bf1a1ca9f4ffd731fb:client/src/api/peliculas.js
         if (data.poster) formData.append('poster', data.poster);
 
         const url = `${BASE_API}/api/peliculas/${id}/`;

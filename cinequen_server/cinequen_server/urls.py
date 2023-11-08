@@ -43,6 +43,7 @@ urlpatterns = [
     path('api/', include(router_butacas.urls)),
     path('api/', include(router_butacasxfuncion.urls)),
     path('api/', include(router_entradas.urls)),
+    path('api/', include('zeep_api.api.router')),
 ]
 
 # Configura el acceso a las imágenes

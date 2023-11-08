@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django_filters',
     'reportlab',
     'qrcode',
+    'zeep',
     'establecimientos',
     'peliculas',
     'salas',
@@ -56,6 +57,7 @@ INSTALLED_APPS = [
     'butacas',
     'butacasxfuncion',
     'entradas',
+    'zeep_api',
 
 ]
 

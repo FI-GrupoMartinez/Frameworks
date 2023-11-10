@@ -1,5 +1,5 @@
 import { AdminLayout, LoginAdminLayout } from "../layouts";
-import { HomeAdmin, UsersAdmin, FuncionesAdmin, PeliculasAdmin, EstablecimientosAdmin, SalasAdmin, LoginAdmin } from "../pages/Admin";
+import { HomeAdmin, UsersAdmin, FuncionesAdmin, PeliculasAdmin, EstablecimientosAdmin, SalasAdmin, LoginAdmin, Soap_Calculadora, Soap } from "../pages/Admin";
 
 const routesAdmin = [
     {
@@ -36,6 +36,11 @@ const routesAdmin = [
         path: "/admin/login",
         layout: LoginAdminLayout,
         component: LoginAdmin,
+    },
+    {
+        path: "/admin/soap",
+        layout: AdminLayout,
+        component: Soap,
     },
 ];
 
